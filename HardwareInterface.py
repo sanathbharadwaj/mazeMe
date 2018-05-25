@@ -46,7 +46,7 @@ class HardwareInterface:
 		GPIO.output(m1p1, False)
 		GPIO.output(m1p2, False)
 		GPIO.output(m2p1, False)
-		GPIO.output(m2p2, False)
+		GPIO.output(m2p2, False)1
 
 	def moveBackward():
 		GPIO.output(m1p1, False)
