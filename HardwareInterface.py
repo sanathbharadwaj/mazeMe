@@ -63,7 +63,7 @@ class HardwareInterface:
 			GPIO.output(self.m1p2, False)
 			GPIO.output(self.m2p1, False)
 			GPIO.output(self.m2p2, False)
-			time.sleep(0.3)
+			time.sleep(2)
 			GPIO.output(self.m1p1, False)
 			GPIO.output(self.m1p2, False)
 			GPIO.output(self.m2p1, False)	
@@ -73,7 +73,7 @@ class HardwareInterface:
 			GPIO.output(self.m1p2, False)
 			GPIO.output(self.m2p1, True)
 			GPIO.output(self.m2p2, False)
-			time.sleep(0.3)
+			time.sleep(2)
 			GPIO.output(self.m1p1, False)
 			GPIO.output(self.m1p2, False)
 			GPIO.output(self.m2p1, False)
@@ -115,7 +115,6 @@ class HardwareInterface:
 
 
 dd = HardwareInterface()
-dd.turn(2)
 dd.turn(2)
 #dd.moveForward()
 #dd.moveBackward()
