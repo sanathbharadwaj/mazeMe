@@ -34,7 +34,7 @@ class HardwareInterface:
 		# GPIO.setup(t[2] ,GPIO.OUT)
 		# GPIO.setup(e[2] ,GPIO.IN)
 
-	def moveForward():
+	def moveForward(self):
 		GPIO.output(self.m1p1, True)
 		GPIO.output(self.m1p2, False)
 		GPIO.output(self.m2p1, True)
