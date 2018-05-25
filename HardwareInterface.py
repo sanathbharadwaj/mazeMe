@@ -115,10 +115,10 @@ class HardwareInterface:
 
 
 dd = HardwareInterface()
-dd.turn(1)
 dd.turn(2)
-dd.moveForward()
-dd.moveBackward()
+dd.turn(2)
+#dd.moveForward()
+#dd.moveBackward()
 
 
 
