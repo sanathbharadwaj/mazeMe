@@ -45,7 +45,7 @@ class HardwareInterface:
 		GPIO.output(self.m2p1, False)
 		GPIO.output(self.m2p2, False)
 
-	def moveBackward():
+	def moveBackward(self):
 		GPIO.output(self.m1p1, False)
 		GPIO.output(self.m1p2, True)
 		GPIO.output(self.m2p1, False)
@@ -57,7 +57,7 @@ class HardwareInterface:
 		GPIO.output(self.m2p2, False)
 
 
-	def turn(direction):
+	def turn(self, direction):
 		if direction == 1:
 			GPIO.output(self.m1p1, True)
 			GPIO.output(self.m1p2, False)
