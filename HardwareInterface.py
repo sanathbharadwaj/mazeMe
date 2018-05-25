@@ -83,32 +83,35 @@ class HardwareInterface:
 	def getSensor(i):
 		maxDistance = 40;
 		GPIO.output(t[i], True)
-    	time.sleep(0.00001)
-    	GPIO.output(t[i], False)
-    	start = time.time()
+		time.sleep(0.00001)
+		GPIO.output(t[i], False)
+		start = time.time()
 
-    	while GPIO.input(e[i])==0:
-        	start = time.time()
+		while GPIO.input(e[i])==0:
+			start = time.time()
 
-    	while GPIO.input(e[i])==1:
-        	stop = time.time()
+		while GPIO.input(e[i])==1:
+			stop = time.time()
 
-    	# Calculate pulse length
-    	elapsed = stop-start
+		# Calculate pulse length
+		elapsed = stop-start
 
-    	# Distance pulse travelled in that time is time
-    	# multiplied by the speed of sound (cm/s)
-    	distance = elapsed * 34300
+		# Distance pulse travelled in that time is time
 
-    	# That was the distance there and back so halve the value
-    	distance = distance / 2
+		# multiplied by the speed of sound (cm/s)
 
-    	if distance > maxDistance:
-    		distance = maxDistance
+		distance = elapsed * 34300
 
-    	nValue = (maxDistance - distance)/maxDistance
+		# That was the distance there and back so halve the value
 
-    	return nValue
+		distance = distance / 2
+
+		if distance > maxDistance:
+			distance = maxDistance
+
+		nValue = (maxDistance - distance)/maxDistance
+
+		return nValue
 
 
 dd = HardwareInterface()
