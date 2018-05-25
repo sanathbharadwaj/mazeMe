@@ -2,10 +2,6 @@
 import time
 import RPi.GPIO as GPIO
 
-dd = HardwareInterface()
-dd.moveForward()
-
-
 class HardwareInterface:
 
 	def __init__(self):
@@ -16,17 +12,18 @@ class HardwareInterface:
 		self.t = []
 		self.e = []
 		self.rotation = 0;
-		self.t[0] = 3
-		self.e[0] = 5
-		self.t[1] = 3
-		self.e[1] = 5
-		self.t[2] = 3
-		self.e[2] = 5
+		self.t.append(3)
+		self.e.append(5)
+		self.t.append(3)
+		self.e.append(5)
+		self.t.append(3)
+		self.e.append(5)
+		
 		GPIO.setmode(GPIO.BOARD)
-		GPIO.setup(m1p1, GPIO.OUT)
-		GPIO.setup(m1p2, GPIO.OUT)
-		GPIO.setup(m2p1, GPIO.OUT)
-		GPIO.setup(m2p2, GPIO.OUT)
+		GPIO.setup(self.m1p1, GPIO.OUT)
+		GPIO.setup(self.m1p2, GPIO.OUT)
+		GPIO.setup(self.m2p1, GPIO.OUT)
+		GPIO.setup(self.m2p2, GPIO.OUT)
 
 		# GPIO.setup(t[0],GPIO.OUT)
 		# GPIO.setup(e[0] ,GPIO.IN)
@@ -38,49 +35,49 @@ class HardwareInterface:
 		# GPIO.setup(e[2] ,GPIO.IN)
 
 	def moveForward():
-		GPIO.output(m1p1, True)
-		GPIO.output(m1p2, False)
-		GPIO.output(m2p1, True)
-		GPIO.output(m2p2, False)
+		GPIO.output(self.m1p1, True)
+		GPIO.output(self.m1p2, False)
+		GPIO.output(self.m2p1, True)
+		GPIO.output(self.m2p2, False)
 		time.sleep(0.3)
-		GPIO.output(m1p1, False)
-		GPIO.output(m1p2, False)
-		GPIO.output(m2p1, False)
-		GPIO.output(m2p2, False)
+		GPIO.output(self.m1p1, False)
+		GPIO.output(self.m1p2, False)
+		GPIO.output(self.m2p1, False)
+		GPIO.output(self.m2p2, False)
 
 	def moveBackward():
-		GPIO.output(m1p1, False)
-		GPIO.output(m1p2, True)
-		GPIO.output(m2p1, False)
-		GPIO.output(m2p2, True)
+		GPIO.output(self.m1p1, False)
+		GPIO.output(self.m1p2, True)
+		GPIO.output(self.m2p1, False)
+		GPIO.output(self.m2p2, True)
 		time.sleep(0.3)
-		GPIO.output(m1p1, False)
-		GPIO.output(m1p2, False)
-		GPIO.output(m2p1, False)
-		GPIO.output(m2p2, False)
+		GPIO.output(self.m1p1, False)
+		GPIO.output(self.m1p2, False)
+		GPIO.output(self.m2p1, False)
+		GPIO.output(self.m2p2, False)
 
 
 	def turn(direction):
 		if direction == 1:
-			GPIO.output(m1p1, True)
-			GPIO.output(m1p2, False)
-			GPIO.output(m2p1, False)
-			GPIO.output(m2p2, False)
+			GPIO.output(self.m1p1, True)
+			GPIO.output(self.m1p2, False)
+			GPIO.output(self.m2p1, False)
+			GPIO.output(self.m2p2, False)
 			time.sleep(0.3)
-			GPIO.output(m1p1, False)
-			GPIO.output(m1p2, False)
-			GPIO.output(m2p1, False)	
-			GPIO.output(m2p2, False)
+			GPIO.output(self.m1p1, False)
+			GPIO.output(self.m1p2, False)
+			GPIO.output(self.m2p1, False)	
+			GPIO.output(self.m2p2, False)
 		else:
-			GPIO.output(m1p1, False)
-			GPIO.output(m1p2, False)
-			GPIO.output(m2p1, True)
-			GPIO.output(m2p2, False)
+			GPIO.output(self.m1p1, False)
+			GPIO.output(self.m1p2, False)
+			GPIO.output(self.m2p1, True)
+			GPIO.output(self.m2p2, False)
 			time.sleep(0.3)
-			GPIO.output(m1p1, False)
-			GPIO.output(m1p2, False)
-			GPIO.output(m2p1, False)
-			GPIO.output(m2p2, False)
+			GPIO.output(self.m1p1, False)
+			GPIO.output(self.m1p2, False)
+			GPIO.output(self.m2p1, False)
+			GPIO.output(self.m2p2, False)
 
 
 	def getSensor(i):
@@ -113,8 +110,10 @@ class HardwareInterface:
 
     	return nValue
 
-    def getRotation():
-    	return rotation
+
+dd = HardwareInterface()
+dd.moveForward()
+
 
 
 	
