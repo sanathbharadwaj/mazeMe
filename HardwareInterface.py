@@ -28,14 +28,14 @@ class HardwareInterface:
 		GPIO.setup(m2p1, GPIO.OUT)
 		GPIO.setup(m2p2, GPIO.OUT)
 
-		GPIO.setup(t[0],GPIO.OUT)
-		GPIO.setup(e[0] ,GPIO.IN)
+		# GPIO.setup(t[0],GPIO.OUT)
+		# GPIO.setup(e[0] ,GPIO.IN)
 
-		GPIO.setup(t[1] ,GPIO.OUT)
-		GPIO.setup(e[1] ,GPIO.IN)
+		# GPIO.setup(t[1] ,GPIO.OUT)
+		# GPIO.setup(e[1] ,GPIO.IN)
 
-		GPIO.setup(t[2] ,GPIO.OUT)
-		GPIO.setup(e[2] ,GPIO.IN)
+		# GPIO.setup(t[2] ,GPIO.OUT)
+		# GPIO.setup(e[2] ,GPIO.IN)
 
 	def moveForward():
 		GPIO.output(m1p1, True)
